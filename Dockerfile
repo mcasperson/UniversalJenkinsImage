@@ -45,3 +45,11 @@ RUN mkdir /opt/gitversion
 RUN tar -C /opt/gitversion -xzf gitversion-linux-x64-5.7.0.tar.gz
 RUN chmod -R 755 /opt/gitversion
 ENV PATH="/opt/gitversion:${PATH}"
+
+ADD maven_tool.groovy /usr/share/jenkins/ref/init.groovy.d/maven_tool.groovy
+ADD gradle_tool.groovy /usr/share/jenkins/ref/init.groovy.d/gradle_tool.groovy
+ADD java_tool.groovy /usr/share/jenkins/ref/init.groovy.d/java_tool.groovy
+ADD octopus_tool.groovy /usr/share/jenkins/ref/init.groovy.d/octopus_tool.groovy
+ADD octopus_server.groovy /usr/share/jenkins/ref/init.groovy.d/octopus_server.groovy
+
+ENV JAVA_OPTS="-Djenkins.install.runSetupWizard=false -Dhudson.security.csrf.GlobalCrumbIssuerConfiguration.DISABLE_CSRF_PROTECTION=true"
