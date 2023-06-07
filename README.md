@@ -6,5 +6,5 @@ This is only used for testing, as authentication has been disabled allowing anyo
 Run with
 
 ```bash
-docker run -p 8080:8080 mcasperson/universaljenkins
+docker run -p 8080:8080 -p 50000:50000 --restart=on-failure -v jenkins_home:/var/jenkins_home mcasperson/universaljenkins
 ```
