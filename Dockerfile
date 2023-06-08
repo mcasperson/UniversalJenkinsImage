@@ -1,7 +1,7 @@
 FROM jenkins/jenkins:lts
 USER root
 # install plugins
-RUN jenkins-plugin-cli --plugins pipeline-utility-steps:2.15.4 gradle:2.8 maven-plugin:3.22 jdk-tool:66.vd8fa_64ee91b_d workflow-aggregator:596.v8c21c963d92d git:5.1.0 msbuild:1.30 mstest:1.0.0 octopusdeploy:3.1.9
+RUN jenkins-plugin-cli --plugins ws-cleanup:0.45 pipeline-utility-steps:2.15.4 gradle:2.8 maven-plugin:3.22 jdk-tool:66.vd8fa_64ee91b_d workflow-aggregator:596.v8c21c963d92d git:5.1.0 msbuild:1.30 mstest:1.0.0 octopusdeploy:3.1.9
 RUN apt-get update
 # Install php, ruby, python
 RUN apt-get install dnsutils sed vim maven wget curl sudo python3 python3-pip ruby-full ruby-dev php7.4 php-cli php-zip php-dom php-mbstring unzip -y
